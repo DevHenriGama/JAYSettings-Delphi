@@ -12,11 +12,9 @@ JAYSettings-Delphi é uma biblioteca para gerenciar arquivos de configuração b
 ```
 /JAYSettings-Delphi
   ├── src/                # Código-fonte principal
-  │   ├── JAYSettings.pas # Classe principal de gerenciamento de configurações
-  │   ├── JSONHelper.pas  # Métodos auxiliares para manipulação de JSON
-  │   └── Interfaces/     # Interfaces do sistema
+  │   ├── JaySettings.CORE.pas # Classe principal de gerenciamento de configurações
+  │   ├── JaySettings.Interfaces.pas  # Interfaces do projeto
   ├── examples/           # Exemplos de uso
-  ├── tests/              # Testes unitários
   ├── README.md           # Documentação do projeto
   ├── LICENSE             # Licença do projeto
   └── JAYSettings.dproj   # Arquivo do projeto Delphi
@@ -39,24 +37,27 @@ boss install https://github.com/DevHenriGama/JAYSettings-Delphi.git
 ## 🛠️ Como Usar
 ```delphi
 uses
-  JAYSettings;
+  JaySettings.CORE;
 
-var
-  Config: TJAYSettings;
+//Para Ler uma configuração
+procedure ReadConfig;
 begin
-  Config := TJAYSettings.Create('config.json');
-  try
-    // Definir uma configuração
-    Config.SetValue('App.Theme', 'Dark');
-    Config.SetValue('App.Volume', 75);
-    
-    // Obter um valor
-    ShowMessage(Config.GetValue<string>('App.Theme'));
-    ShowMessage(IntToStr(Config.GetValue<Integer>('App.Volume')));
-  finally
-    Config.Free;
+  if not Settings.ContainsKey(Edit1.Text) then
+  begin
+    ShowMessage('Não possui essa configuração salva');
+    Exit;
   end;
+
+  //Checkbox define se usa criptografia
+  Edit2.Text := Settings(CheckBox1.Checked).GetSettings(Edit1.Text);
 end;
+
+//Para Salvar uma configuração
+procedure WriteConfig;
+begin
+  Settings(CheckBox1.Checked).SetSettings(Edit1.Text, Edit2.Text);
+end;
+
 ```
 
 ## 📝 Licença
