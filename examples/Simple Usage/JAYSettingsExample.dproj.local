@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2025/01/03 21:03:39.000.199,=C:\Users\Henrique\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/01/03 21:05:49.000.559,C:\Users\Henrique\Documents\Embarcadero\Studio\Projects\Unit1.dfm=X:\Projects\JAYSettings\JAYSettings-Delphi\examples\Settings\uMain.dfm</Transaction>
+    <Transaction>2025/01/03 21:05:49.000.559,C:\Users\Henrique\Documents\Embarcadero\Studio\Projects\Unit1.pas=X:\Projects\JAYSettings\JAYSettings-Delphi\examples\Settings\uMain.pas</Transaction>
+    <Transaction>2025/01/03 21:06:03.000.350,C:\Users\Henrique\Documents\Embarcadero\Studio\Projects\Project1.dproj=X:\Projects\JAYSettings\JAYSettings-Delphi\examples\Settings\JAYSettingsExample.dproj</Transaction>
+    <Transaction>2025/01/03 21:06:58.000.207,=X:\Projects\JAYSettings\JAYSettings-Delphi\src\JaySettings.CORE.pas</Transaction>
+    <Transaction>2025/01/03 21:06:58.000.270,=X:\Projects\JAYSettings\JAYSettings-Delphi\src\JaySettings.Interfaces.pas</Transaction>
+  </Transactions>
+</BorlandProject>

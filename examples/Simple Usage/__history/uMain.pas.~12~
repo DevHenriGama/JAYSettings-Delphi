@@ -1,0 +1,57 @@
+unit uMain;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, JaySettings.CORE;
+
+type
+  TForm1 = class(TForm)
+    btnSalvar: TButton;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    btnLer: TButton;
+    CheckBox1: TCheckBox;
+    procedure btnLerClick(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    FUseEncrypt: Boolean;
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnSalvarClick(Sender: TObject);
+begin
+  Settings.SetSettings(Edit1.Text, Edit2.Text);
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+FUseEncrypt := False;
+end;
+
+procedure TForm1.btnLerClick(Sender: TObject);
+begin
+  if not Settings.ContainsKey(Edit1.Text) then
+  begin
+    ShowMessage('Não possui essa configuração salva');
+    Exit;
+  end;
+
+  Edit2.Text := Settings.GetSettings(Edit1.Text);
+
+end;
+
+end.
